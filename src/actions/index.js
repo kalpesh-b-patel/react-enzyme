@@ -1,4 +1,4 @@
-import { ADD, FETCH } from './types';
+import { ADD, FETCH, TOGGLE_AUTH } from './types';
 import axios from 'axios';
 
 export const add = (payload) => ({
@@ -14,5 +14,12 @@ export const fetch = async () => {
   return {
     type: FETCH,
     payload: response.data,
+  };
+};
+
+export const toggleAuth = async (payload) => {
+  return {
+    type: TOGGLE_AUTH,
+    payload,
   };
 };
